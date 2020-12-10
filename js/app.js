@@ -1,13 +1,33 @@
 document.addEventListener('DOMContentLoaded', () => {
-
+  
+  // grab parent element  (form)
   const coolForm = document.querySelector('#new-item-form');
   coolForm.addEventListener('submit', handleFormSubmit);
+
+
+  // grab the body to add the delete button
+  const body = document.querySelector('body');
+
+  // create a new button (for deleting stuff)
+  const newButton = document.createElement('button');
+  newButton.textContent = '🚮';
+  // add an event listener to the newly created button
+  newButton.addEventListener('click', hanldeDeleteButton);
+  
+  // add the delete button in the dom
+  body.appendChild(newButton);
 
   // console.log('JavaScript loaded');
 });
 
 
-// function
+// functions
+const hanldeDeleteButton = function() {
+  // grabbing the unordered list
+  const list = document.querySelector('#reading-list');
+  list.innerHTML = '';
+};
+
 const handleFormSubmit = function(event) {
   event.preventDefault();
 
@@ -40,4 +60,5 @@ const handleFormSubmit = function(event) {
   list.appendChild(horizontalLine);
   // document.getElementById("new-item-form").reset();
   document.querySelector('#new-item-form').reset();
+
 };
