@@ -1,3 +1,19 @@
 body {
   font-family: Palatino;
 }
+
+.reading_item {
+  background-color: salmon;
+  margin-right: 30px;
+  border-radius: 10px;
+  padding: 50px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, .5);
+}
+
+
+body > ul{
+  list-style: none;
+  display: flex;
+
+
+}

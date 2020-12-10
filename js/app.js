@@ -34,6 +34,13 @@ const handleFormSubmit = function(event) {
   // grabbing the unordered list
   const list = document.querySelector('#reading-list');
 
+
+  // create a division
+  const div = document.createElement('div');
+
+  // giving div a class name
+  div.classList.add('reading_item');
+
   // grab the user input
   const title = event.target.title.value;
   const author = event.target.author.value;
@@ -51,14 +58,19 @@ const handleFormSubmit = function(event) {
   newListItemCategory.textContent = category;
 
   // create a horizontal line item
-  const horizontalLine = document.createElement('hr');
+  // const horizontalLine = document.createElement('hr');
 
-  // append the newly created item into the list?
-  list.appendChild(newListItemTitle);
-  list.appendChild(newListItemAuthor);
-  list.appendChild(newListItemCategory);
-  list.appendChild(horizontalLine);
   // document.getElementById("new-item-form").reset();
   document.querySelector('#new-item-form').reset();
+
+
+  // append the li items in the div
+  div.appendChild(newListItemTitle);
+  div.appendChild(newListItemAuthor);
+  div.appendChild(newListItemCategory);
+  // list.appendChild(horizontalLine);   <--- appends the horizontal line 
+
+  // append div to ul
+  list.appendChild(div);
 
 };
